@@ -6,6 +6,7 @@ import Post from './Post'
 const PostsComponent = (props) => {
 
     const [posts, setPosts] = useState(postsData.posts)
+    const [filterTerm, setFilterTerm] = useState("")
     
     const displayPosts = () => (
         posts.map(post => <Post key={post.id} postInfo={post} updateLikes={updateLikes}/>)
@@ -16,6 +17,10 @@ const PostsComponent = (props) => {
         const updateIndex = posts.indexOf(postToUpdate)
         postToUpdate.likes += 1
         setPosts(prevPosts => [...prevPosts.slice(0, updateIndex), postToUpdate, ...prevPosts.slice(updateIndex + 1)])
+    }
+
+    const displayFilteredPosts = () => {
+
     }
 
     return(
