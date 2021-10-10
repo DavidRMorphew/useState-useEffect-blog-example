@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Post from '../components/Post'
 
 class PostsContainer extends Component {
     render(){
