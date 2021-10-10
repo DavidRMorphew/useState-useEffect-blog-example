@@ -15,7 +15,12 @@ class PostsContainer extends Component {
 
     updateLikes = (id) => {
         const postToUpdate = this.state.posts.find(post => post.id === id)
-        console.log(postToUpdate)
+        const updateIndex = this.state.posts.indexOf(postToUpdate)
+        postToUpdate.likes += 1
+        this.setState((prevState) => ({
+                ...prevState,
+                posts: [...prevState.posts.slice(0, updateIndex), postToUpdate, ...prevState.posts.slice(updateIndex + 1)]
+        }))
     }
 
     render(){
