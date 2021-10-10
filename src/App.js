@@ -1,5 +1,6 @@
 import './App.css';
 import QuotesContainer from './containers/QuotesContainer'
+import QuotesComponent from './components/QuotesComponent'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       </header>
       <body>
         <QuotesContainer />
+        <QuotesComponent />
       </body>
     </div>
   );
