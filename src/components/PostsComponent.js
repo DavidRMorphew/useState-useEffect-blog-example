@@ -15,7 +15,6 @@ const PostsComponent = (props) => {
         const postToUpdate = posts.find(post => post.id === id)
         const updateIndex = posts.indexOf(postToUpdate)
         postToUpdate.likes += 1
-        console.log(postToUpdate)
         setPosts(prevPosts => [...prevPosts.slice(0, updateIndex), postToUpdate, ...prevPosts.slice(updateIndex + 1)])
     }
 
