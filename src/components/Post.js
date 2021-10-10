@@ -10,7 +10,11 @@ const Post = ({ postInfo: {id, title, body, likes}, updateLikes }) => {
             <Card.Body>
                 <Card.Text>{body}</Card.Text>
             </Card.Body>
-            <Card.Footer>{likes}</Card.Footer>
+            <Card.Footer>
+                Likes: {likes}
+                <br></br>
+                <button onClick={() => updateLikes(id)}>Like!</button>
+            </Card.Footer>
         </Card>
     )
 }

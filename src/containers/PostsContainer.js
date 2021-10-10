@@ -14,7 +14,8 @@ class PostsContainer extends Component {
     )
 
     updateLikes = (id) => {
-
+        const postToUpdate = this.state.posts.find(post => post.id === id)
+        console.log(postToUpdate)
     }
 
     render(){
