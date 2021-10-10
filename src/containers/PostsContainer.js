@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { CardGroup, Container } from 'react-bootstrap'
+import { CardGroup, Container, Button } from 'react-bootstrap'
 import postsData from '../data/posts'
 import Post from '../components/Post'
 
@@ -28,6 +28,11 @@ class PostsContainer extends Component {
         return(
             <div>
                 <h1>Posts Logic for Display Will Be in This Container Component</h1>
+                <>      
+                <Button>0 Likes</Button>{' '}
+                <Button>5+ Likes</Button>{' '}
+                <Button>10+ Likes</Button>
+                </>
                 <Container>
                 <CardGroup>
                     {this.displayPosts()}
