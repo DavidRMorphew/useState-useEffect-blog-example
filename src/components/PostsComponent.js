@@ -8,8 +8,12 @@ const PostsComponent = (props) => {
     const [posts, setPosts] = useState(postsData.posts)
     
     const displayPosts = () => (
-        posts.map(post => <Post key={post.id} postInfo={post}/>)
+        posts.map(post => <Post key={post.id} postInfo={post} updateLikes={updateLikes}/>)
     )
+
+    const updateLikes = (id) => {
+
+    }
 
     return(
         <div>

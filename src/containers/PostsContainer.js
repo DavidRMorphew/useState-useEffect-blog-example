@@ -10,8 +10,12 @@ class PostsContainer extends Component {
     }
 
     displayPosts = () => (
-        this.state.posts.map(post => <Post key={post.id} postInfo={post}/>)
+        this.state.posts.map(post => <Post key={post.id} postInfo={post} updateLikes={this.updateLikes}/>)
     )
+
+    updateLikes = (id) => {
+
+    }
 
     render(){
         {console.log(this.state.posts)}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 
-const Post = ({ postInfo: {id, title, body, likes} }) => {
+const Post = ({ postInfo: {id, title, body, likes}, updateLikes }) => {
     return(
         <Card>
             <Card.Header>
