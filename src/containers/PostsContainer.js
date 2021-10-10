@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { CardGroup, Container } from 'react-bootstrap'
 import postsData from '../data/posts'
 import Post from '../components/Post'
 
@@ -17,9 +18,11 @@ class PostsContainer extends Component {
         return(
             <div>
                 <h1>Posts Logic for Display Will Be in This Container Component</h1>
-                <ul>
+                <Container>
+                <CardGroup>
                     {this.displayPosts()}
-                </ul>
+                </CardGroup>
+                </Container>
             </div>
         )
     }

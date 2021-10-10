@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { CardGroup, Container } from 'react-bootstrap'
 import postsData from '../data/posts'
 import Post from './Post'
 
@@ -13,9 +14,11 @@ const PostsComponent = (props) => {
     return(
         <div>
             <h1>Posts Using Hooks Will Go Here</h1>
-            <ul>
+            <Container>
+            <CardGroup>
                 {displayPosts()}
-            </ul>
+            </CardGroup>
+            </Container>
         </div>
     )
 }
