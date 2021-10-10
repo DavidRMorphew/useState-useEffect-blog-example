@@ -12,7 +12,8 @@ const PostsComponent = (props) => {
     )
 
     const updateLikes = (id) => {
-
+        const postToUpdate = posts.find(post => post.id === id)
+        console.log(postToUpdate)
     }
 
     return(
