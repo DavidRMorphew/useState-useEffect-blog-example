@@ -22,10 +22,8 @@ const PostsComponent = (props) => {
         setFilterNum(num);
     }
 
-    const displayFilteredPosts = () => {
-        return posts.filter(post => post.likes >= filterNum)
-    }
-
+    const displayFilteredPosts = posts.filter(post => post.likes >= filterNum).map(post => <Post key={post.id} postInfo={post} updateLikes={updateLikes}/>)
+    
     return(
         <div>
             <h1>Posts Using Hooks Will Go Here</h1>
@@ -36,7 +34,7 @@ const PostsComponent = (props) => {
             </>
             <Container>
             <CardGroup>
-                {displayPosts}
+                {filterNum ? displayFilteredPosts : displayPosts}
             </CardGroup>
             </Container>
         </div>
