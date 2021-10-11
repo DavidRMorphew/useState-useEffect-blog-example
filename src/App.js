@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
         <h1>Example App</h1>
       </header>
-        <PostsContainer />
+        {/* <PostsContainer /> */}
         <PostsComponent />
     </div>
   );

@@ -44,7 +44,7 @@ const PostsComponent = () => {
     
     return(
         <div>
-            <h1>Posts Using Hooks Will Go Here</h1>
+            <h1>Blog Posts</h1>
             <>      
             <Button onClick={() => handleFilterNum(0)}>All</Button>{' '}
             <Button onClick={() => handleFilterNum(5)}>5+ Likes</Button>{' '}
