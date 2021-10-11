@@ -20,15 +20,15 @@ const PostsComponent = () => {
     }
         
     const handleFilterNum = (num) => {
-        setFilterNum(num);
+        setFilterNum(num);       
     }
     
-    // Better Option
+    // Better Option: Comment in Lines 27 and 29
     // const displayPosts = posts.map(post => <Post key={post.id} postInfo={post} updateLikes={updateLikes}/>)
 
     // const displayFilteredPosts = posts.filter(post => post.likes >= filterNum).map(post => <Post key={post.id} postInfo={post} updateLikes={updateLikes}/>)
 
-    // useEffect Option ---
+    // useEffect Option --->
     
     const renderedPosts = postsToDisplay.map(post => <Post key={post.id} postInfo={post} updateLikes={updateLikes}/>)
     
@@ -37,7 +37,7 @@ const PostsComponent = () => {
         setPostsToDisplay(displayablePosts)
     }, [posts, filterNum])
     
-    // useEffect Option ----
+    // useEffect Option <----
 
     const handleSubmit = (newPost) => {
         setPosts([...posts, newPost])
@@ -47,7 +47,7 @@ const PostsComponent = () => {
         <div>
             <h1>Posts Using Hooks Will Go Here</h1>
             <>      
-            <Button onClick={() => handleFilterNum(0)}>0 Likes</Button>{' '}
+            <Button onClick={() => handleFilterNum(0)}>All</Button>{' '}
             <Button onClick={() => handleFilterNum(5)}>5+ Likes</Button>{' '}
             <Button onClick={() => handleFilterNum(10)}>10+ Likes</Button>
             </>

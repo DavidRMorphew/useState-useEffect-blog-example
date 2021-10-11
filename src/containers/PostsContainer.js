@@ -29,7 +29,7 @@ class PostsContainer extends Component {
             <div>
                 <h1>Posts Logic for Display Will Be in This Container Component</h1>
                 <>      
-                <Button>0 Likes</Button>{' '}
+                <Button>All</Button>{' '}
                 <Button>5+ Likes</Button>{' '}
                 <Button>10+ Likes</Button>
                 </>
