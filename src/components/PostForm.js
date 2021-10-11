@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap'
 
 const PostForm = ({postsCount, handleSubmit}) => {
 
-    const [newPostId, setNewPostId] = useState(postsCount + 1)
+    let newPostId = postsCount + 1
 
     const [formData, setFormData] = useState({
         id: newPostId,

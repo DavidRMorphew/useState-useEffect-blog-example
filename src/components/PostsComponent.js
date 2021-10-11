@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { CardGroup, Container, Button } from 'react-bootstrap'
 import postsData from '../data/posts'
 import Post from './Post'
 import PostForm from './PostForm'
 
-const PostsComponent = (props) => {
+const PostsComponent = () => {
 
     const [posts, setPosts] = useState(postsData.posts)
     const [filterNum, setFilterNum] = useState(null)
+    // useEffect Option
+    const [postsToDisplay, setPostsToDisplay] = useState(posts)
     
     
     const updateLikes = (id) => {
@@ -16,17 +18,28 @@ const PostsComponent = (props) => {
         postToUpdate.likes += 1
         setPosts(prevPosts => [...prevPosts.slice(0, updateIndex), postToUpdate, ...prevPosts.slice(updateIndex + 1)])
     }
-    
-    const displayPosts = posts.map(post => <Post key={post.id} postInfo={post} updateLikes={updateLikes}/>)
-
+        
     const handleFilterNum = (num) => {
         setFilterNum(num);
     }
+    
+    // Better Option
+    // const displayPosts = posts.map(post => <Post key={post.id} postInfo={post} updateLikes={updateLikes}/>)
 
-    const displayFilteredPosts = posts.filter(post => post.likes >= filterNum).map(post => <Post key={post.id} postInfo={post} updateLikes={updateLikes}/>)
+    // const displayFilteredPosts = posts.filter(post => post.likes >= filterNum).map(post => <Post key={post.id} postInfo={post} updateLikes={updateLikes}/>)
+
+    // useEffect Option ---
+    
+    const renderedPosts = postsToDisplay.map(post => <Post key={post.id} postInfo={post} updateLikes={updateLikes}/>)
+    
+    useEffect(() => {
+        const displayablePosts = filterNum ? posts.filter(post => post.likes >= filterNum) : posts
+        setPostsToDisplay(displayablePosts)
+    }, [posts, filterNum])
+    
+    // useEffect Option ----
 
     const handleSubmit = (newPost) => {
-        console.log(newPost)
         setPosts([...posts, newPost])
     }
     
@@ -40,7 +53,8 @@ const PostsComponent = (props) => {
             </>
             <Container>
             <CardGroup>
-                {filterNum ? displayFilteredPosts : displayPosts}
+                {/* {filterNum ? displayFilteredPosts : displayPosts} */}
+                {renderedPosts}
             </CardGroup>
             </Container>
             <PostForm postsCount={posts.length} handleSubmit={handleSubmit}/>
