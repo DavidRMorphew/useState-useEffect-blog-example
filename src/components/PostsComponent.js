@@ -24,6 +24,10 @@ const PostsComponent = (props) => {
     }
 
     const displayFilteredPosts = posts.filter(post => post.likes >= filterNum).map(post => <Post key={post.id} postInfo={post} updateLikes={updateLikes}/>)
+
+    const handleSubmit = (postData) => {
+        console.log(postData)
+    }
     
     return(
         <div>
@@ -38,7 +42,7 @@ const PostsComponent = (props) => {
                 {filterNum ? displayFilteredPosts : displayPosts}
             </CardGroup>
             </Container>
-            <PostForm postsCount={posts.length}/>
+            <PostForm postsCount={posts.length} handleSubmit={handleSubmit}/>
         </div>
     )
 }
