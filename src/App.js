@@ -1,5 +1,4 @@
 import './App.css';
-import PostsContainer from './containers/PostsContainer'
 import PostsComponent from './components/PostsComponent'
 
 
@@ -9,7 +8,6 @@ function App() {
       <header className="App-header">
         <h1>Example App</h1>
       </header>
-        {/* <PostsContainer /> */}
         <PostsComponent />
     </div>
   );
