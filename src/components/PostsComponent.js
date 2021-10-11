@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { CardGroup, Container, Button } from 'react-bootstrap'
 import postsData from '../data/posts'
 import Post from './Post'
+import PostForm from './PostForm'
 
 const PostsComponent = (props) => {
 
@@ -37,6 +38,7 @@ const PostsComponent = (props) => {
                 {filterNum ? displayFilteredPosts : displayPosts}
             </CardGroup>
             </Container>
+            <PostForm />
         </div>
     )
 }
