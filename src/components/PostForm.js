@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Container } from 'react-bootstrap'
+import { Container, Card } from 'react-bootstrap'
 
 const PostForm = ({postsCount, handleSubmit}) => {
 
@@ -28,7 +28,9 @@ const PostForm = ({postsCount, handleSubmit}) => {
     }
 
     return(
-        <Container>
+        <Container style={{ width: '30rem' }}>
+            <Card >
+            <h4>Add A New Post</h4>
             <form onSubmit={handlePostFormSubmit}>
                 Title:<input type="text" name="title" onChange={handleChange} value={formData.title}/>
                 <br></br>
@@ -36,6 +38,7 @@ const PostForm = ({postsCount, handleSubmit}) => {
                 <br></br>
                 <input type="submit" value="Add Post"/>
             </form>
+            </Card>
         </Container>
     )
 }

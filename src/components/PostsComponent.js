@@ -58,6 +58,7 @@ const PostsComponent = () => {
                 {renderedPosts}
             </CardGroup>
             </Container>
+            <br></br>
             <PostForm postsCount={posts.length} handleSubmit={handleSubmit}/>
         </div>
     )
