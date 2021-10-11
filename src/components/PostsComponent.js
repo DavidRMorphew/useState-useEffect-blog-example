@@ -38,7 +38,7 @@ const PostsComponent = (props) => {
                 {filterNum ? displayFilteredPosts : displayPosts}
             </CardGroup>
             </Container>
-            <PostForm />
+            <PostForm postsCount={posts.length}/>
         </div>
     )
 }
