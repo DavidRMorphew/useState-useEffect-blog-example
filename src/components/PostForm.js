@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Container } from 'react-bootstrap'
 
 const PostForm = (props) => {
+
+    const [formData, setFormData] = useState({
+        id: '',
+        title: '',
+        body: '',
+        likes: 0
+    })
+
     return(
-        <form>
-            <input type="submit" value="Add Post"/>
-        </form>
+        <Container>
+            <form>
+                Title:<input type="text" name="title" />
+                <br></br>
+                <input type="submit" value="Add Post"/>
+            </form>
+        </Container>
     )
 }
 
