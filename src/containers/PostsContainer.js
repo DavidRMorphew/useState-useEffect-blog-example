@@ -6,12 +6,14 @@ import Post from '../components/Post'
 class PostsContainer extends Component {
     
     state = {
-        posts: postsData.posts
+        posts: postsData.posts,
+        filterNum: 0
     }
 
-    displayPosts = () => (
-        this.state.posts.map(post => <Post key={post.id} postInfo={post} updateLikes={this.updateLikes}/>)
-    )
+    displayPosts = this.state.posts.map(post => <Post key={post.id} postInfo={post} updateLikes={this.updateLikes}/>)
+
+
+    displayFilteredPosts = this.state.posts.filter(post => post.likes >= this.state.filterNum).map(post => <Post key={post.id} postInfo={post} updateLikes={this.updateLikes}/>)
 
     updateLikes = (id) => {
         const postToUpdate = this.state.posts.find(post => post.id === id)
@@ -23,19 +25,26 @@ class PostsContainer extends Component {
         }))
     }
 
+    handleFilterNum = (num) => {
+        console.log(num)
+        this.setState((prevState) => ({
+            ...prevState,
+            filterNum: num
+        }), () => console.log(this.state.filterNum))
+    }
+
     render(){
-        {console.log(this.state.posts)}
         return(
             <div>
                 <h1>Posts Logic for Display Will Be in This Container Component</h1>
                 <>      
-                <Button>All</Button>{' '}
-                <Button>5+ Likes</Button>{' '}
-                <Button>10+ Likes</Button>
+                <Button onClick={() => this.handleFilterNum(0)}>All</Button>{' '}
+                <Button onClick={() => this.handleFilterNum(5)}>5+ Likes</Button>{' '}
+                <Button onClick={() => this.handleFilterNum(10)}>10+ Likes</Button>
                 </>
                 <Container>
                 <CardGroup>
-                    {this.displayPosts()}
+                    {this.state.filterNum !== 0 ? this.displayFilteredPosts : this.displayPosts}
                 </CardGroup>
                 </Container>
             </div>
