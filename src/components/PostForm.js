@@ -3,8 +3,10 @@ import { Container } from 'react-bootstrap'
 
 const PostForm = ({postsCount, handleSubmit}) => {
 
+    const [newPostId, setNewPostId] = useState(postsCount + 1)
+
     const [formData, setFormData] = useState({
-        id: postsCount + 1,
+        id: newPostId,
         title: '',
         body: '',
         likes: 0
@@ -17,6 +19,12 @@ const PostForm = ({postsCount, handleSubmit}) => {
     const handlePostFormSubmit = (e) => {
         e.preventDefault()
         handleSubmit(formData)
+        setFormData({
+            id: newPostId + 1,
+            title: '',
+            body: '',
+            likes: 0
+        })
     }
 
     return(

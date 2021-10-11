@@ -25,8 +25,9 @@ const PostsComponent = (props) => {
 
     const displayFilteredPosts = posts.filter(post => post.likes >= filterNum).map(post => <Post key={post.id} postInfo={post} updateLikes={updateLikes}/>)
 
-    const handleSubmit = (postData) => {
-        console.log(postData)
+    const handleSubmit = (newPost) => {
+        console.log(newPost)
+        setPosts([...posts, newPost])
     }
     
     return(
