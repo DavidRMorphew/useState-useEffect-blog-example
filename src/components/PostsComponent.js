@@ -8,7 +8,7 @@ const PostsComponent = () => {
 
     const [posts, setPosts] = useState(postsData.posts)
     const [filterNum, setFilterNum] = useState(null)
-    // Parasitic State Option: comment in lines 12, 32–39, 58; coment out lines 27, 29, 57
+    // Parasitic State Option: comment in lines 12, 32–39, 58; comment out lines 27, 29, 57
     const [postsToDisplay, setPostsToDisplay] = useState(posts)
     
     
@@ -23,7 +23,7 @@ const PostsComponent = () => {
         setFilterNum(num);       
     }
     
-    // Better Option: COMMENT IN Lines 27, 29, 57; COMMENT OUT lines 12, 32–39, 58
+    // Better Option: comment in Lines 27, 29, 57; comment out lines 12, 32–39, 58
     // const displayPosts = posts.map(post => <Post key={post.id} postInfo={post} updateLikes={updateLikes}/>)
 
     // const displayFilteredPosts = posts.filter(post => post.likes >= filterNum).map(post => <Post key={post.id} postInfo={post} updateLikes={updateLikes}/>)
